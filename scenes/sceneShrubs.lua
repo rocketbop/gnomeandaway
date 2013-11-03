@@ -1,7 +1,7 @@
 ----------------------------------------------------------------------------------
 --
 --
--- sceneHerbs.lua
+-- sceneFlowers.lua
 --
 -- Iconography courtesy of http://www.jigsoaricons.com, Creative Commons
 -- Text alignment tips from: http://docs.coronalabs.com/api/library/display/newText.html
@@ -94,12 +94,12 @@ function scene:enterScene( event )
 	group:insert(navBarContact)
 
 	-- The title of the section
-	herbsSectionText = display.newText( "HERBS SECTION", 0, 0, Helvetica, 20)
-	herbsSectionText:setTextColor(43, 96, 50)
-	herbsSectionText.align = "center"
-	herbsSectionText.x = 160
-	herbsSectionText.y = 80
-	group:insert(herbsSectionText)
+	shrubsSectionText = display.newText( "SHRUBS SECTION", 0, 0, Helvetica, 20)
+	shrubsSectionText:setTextColor(43, 96, 50)
+	shrubsSectionText.align = "center"
+	shrubsSectionText.x = 160
+	shrubsSectionText.y = 80
+	group:insert(shrubsSectionText)
 
 	-- Navigation event listeners
 	navBarHome:addEventListener ("touch", goHome)
@@ -128,64 +128,64 @@ function scene:enterScene( event )
 
 	--setup each row as a new table, then add title, subtitle, and image
 	data[1] = {}
-	data[1].title = "Basil"
-	data[1].subtitle = "Basil is originally from South East Asia, but known to both Theophrastus and Dioscorides."
-	data[1].image = "./images/herbs/herbsListBasil.jpg"
-	data[1].category = "scenes.sceneHerbs"
+	data[1].title = "Bamboo"
+	data[1].subtitle = "Bamboos are some of the fastest-growing plants in the world, due to a unique rhizome-dependent system."
+	data[1].image = "./images/shrubs/shrubsListBamboo.jpg"
+	data[1].category = "scenes.sceneShrubs"
 
 	data[2] = {}
-	data[2].title = "Fennel"
-	data[2].subtitle = "Fennel is used as a food plant by the larvae of some Lepidoptera species including the mouse moth."
-	data[2].image = "./images/herbs/herbsListFennel.jpg"
-	data[2].category = "scenes.sceneHerbs"
+	data[2].title = "Thuja"
+	data[2].subtitle = "Thuja species are used as food by the larvae of the Autumnal Moth, The Engrailed and Juniper Pug. "
+	data[2].image = "./images/shrubs/shrubsListThuja.jpg"
+	data[2].category = "scenes.sceneShrubs"
 
 	data[3] = {}
-	data[3].title = "Dill"
-	data[3].subtitle = "The Old English word 'dile', means to soothe, the plant having the carminative property of relieving gas."
-	data[3].image = "./images/herbs/herbsListDill.jpg"
-	data[3].category = "scenes.sceneHerbs"
+	data[3].title = "Grape Holly"
+	data[3].subtitle = "Resistant to summer drought, tolerates poor soils, and does not create excessive leaf litter."
+	data[3].image = "./images/shrubs/shrubsListGrapeHolly.jpg"
+	data[3].category = "scenes.sceneShrubs"
 
 	data[4] = {}
-	data[4].title = "Peppermint"
-	data[4].subtitle = "Peppermint oil is an ingredient in a natural haemorrhoid treatment."
-	data[4].image = "./images/herbs/herbsListPeppermint.jpg"
-	data[4].category = "scenes.sceneHerbs"
+	data[4].title = "Witch Hazel"
+	data[4].subtitle = "Often used as a natural remedy for psoriasis, eczema, ingrown nails, and dry skin."
+	data[4].image = "./images/shrubs/shrubsListWitchHazel.jpg"
+	data[4].category = "scenes.sceneShrubs"
 
 	data[5] = {}
-	data[5].title = "Thyme"
-	data[5].subtitle = "Ancient Egyptians used thyme for embalming, but embalming is less poplular lately."
-	data[5].image = "./images/herbs/herbsListThyme.jpg"
-	data[5].category = "scenes.sceneHerbs"
+	data[5].title = "Teaberry"
+	data[5].subtitle = "Teaberry is also an ice cream flavor in regions where the plant grows."
+	data[5].image = "./images/shrubs/shrubsListTeaberry.jpg"
+	data[5].category = "scenes.sceneShrubs"
 
 	data[6] = {}
-	data[6].title = "Parsley"
-	data[6].subtitle = "Parsley is very common in central and eastern European cuisines, where it is used in soups, stews, and casseroles."
-	data[6].image = "./images/herbs/herbsListParsley.jpg"
-	data[6].category = "scenes.sceneHerbs"
+	data[6].title = "Lavender"
+	data[6].subtitle = "Lavender essential oil has antiseptic and anti-inflammatory properties."
+	data[6].image = "./images/shrubs/shrubsListLavender.jpg"
+	data[6].category = "scenes.sceneShrubs"
 
 	data[7] = {}
-	data[7].title = "Marjoram"
-	data[7].subtitle = " In Germany, marjoram is known as 'Goose Herb' (Gänzekraut) for its traditional use in seasoning roast goose."
-	data[7].image = "./images/herbs/herbsListMarjoram.jpg"
-	data[7].category = "scenes.sceneHerbs"
+	data[7].title = "Boxwood"
+	data[7].subtitle = "The most common Boxwood in Ireland is Buxus."
+	data[7].image = "./images/shrubs/shrubsListBoxwood.jpg"
+	data[7].category = "scenes.sceneShrubs"
 
 	data[8] = {}
-	data[8].title = "Lovage"
-	data[8].subtitle = "In the UK, an alcoholic lovage cordial is traditionally mixed with brandy as a winter drink."
-	data[8].image = "./images/herbs/herbsListLovage.jpg"
-	data[8].category = "scenes.sceneHerbs"
+	data[8].title = "Sago Palm"
+	data[8].subtitle = "Sago palm was a staple food source for the ancient Chinese, before rice cultivation."
+	data[8].image = "./images/shrubs/shrubsListSagoPalm.jpg"
+	data[8].category = "scenes.sceneShrubs"
 
 	data[9] = {}
-	data[9].title = "Oregano"
-	data[9].subtitle = "Good quality oregano may be strong enough almost to numb the tongue, and is great on pizza."
-	data[9].image = "./images/herbs/herbsListOregano.jpg"
-	data[9].category = "scenes.sceneHerbs"
+	data[9].title = "Cotoneaster"
+	data[9].subtitle = "The red berries are highly attractive to blackbirds and other thrushes."
+	data[9].image = "./images/shrubs/shrubsListCotoneaster.jpg"
+	data[9].category = "scenes.sceneShrubs"
 
 	data[10] = {}
-	data[10].title = "Chives"
-	data[10].subtitle = "Chives have insect-repelling properties that can be used in gardens to control pests."
-	data[10].image = "./images/herbs/herbsListChives.jpg"
-	data[10].category = "scenes.sceneHerbs"
+	data[10].title = "Damianita"
+	data[10].subtitle = "Plant it near walls, driveways, and other areas where reflective heat is intense."
+	data[10].image = "./images/shrubs/shrubsListDamianita.jpg"
+	data[10].category = "scenes.sceneShrubs"
 
 	-- Define where the of the table will be begin.
 	local topBoundary = display.screenOriginY + 140
@@ -204,26 +204,26 @@ function scene:enterScene( event )
 		-- callback = A function that defines how to display the data in each row. Each element in the data table will be used in place of the 
 	    -- argument ("item")  assigned to the callback function. 
 	    callback = function( row ) 
-	                         local g1 = display.newGroup()
+	                         local g = display.newGroup()
 
 	                         local img = display.newImage(row.image)
-	                         g1:insert(img)
+	                         g:insert(img)
 	                         img.x = math.floor(img.width*0.5 + 6) --Move the image slightly away from the side
 	                         img.y = math.floor(img.height*0.5) 
 
 	                         local title =  display.newText( row.title, 0, 0, Helvetica, 14 )
 	                         title:setTextColor(43, 96, 50)
-	                         g1:insert(title)
+	                         g:insert(title)
 	                         title.x = title.width*0.5 + img.width + 10
 	                         title.y = 10
 
 	                         local subtitle =  display.newText( row.subtitle, 0, 50, 170, 90, Helvetica, 12 )
 	                         subtitle:setTextColor( 69, 69, 69 )
-	                         g1:insert(subtitle)
+	                         g:insert(subtitle)
 	                         subtitle.x = subtitle.width*0.5 + img.width + 10
 	                         subtitle.y = title.y + title.height + 40
 
-	                         return g1  
+	                         return g  
 	                  end 
 	}
 	group:insert(myList)

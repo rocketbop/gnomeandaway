@@ -65,6 +65,17 @@ function goHerbs (event)
     end
 end
 
+function goTrees (event)
+	if event.phase == "ended" then
+	storyboard.gotoScene( "scenes.sceneTrees" )
+    end
+end
+
+function goShrubs (event)
+	if event.phase == "ended" then
+	storyboard.gotoScene( "scenes.sceneShrubs" )
+    end
+end
 
 -- Called when the scene's view does not exist:
 function scene:createScene( event )
@@ -140,12 +151,12 @@ function scene:createScene( event )
 	treesButtonText.y = 435
 	group:insert(treesButtonText)
 
-	furnitureButtonText = display.newText( "FURNITURE", 0, 0, Helvetica, 14)
-	furnitureButtonText:setTextColor(68, 68, 68)
-	furnitureButtonText.align = "center"
-	furnitureButtonText.x = 235
-	furnitureButtonText.y = 435
-	group:insert(furnitureButtonText)
+	shrubsButtonText = display.newText( "SHRUBS", 0, 0, Helvetica, 14)
+	shrubsButtonText:setTextColor(68, 68, 68)
+	shrubsButtonText.align = "center"
+	shrubsButtonText.x = 235
+	shrubsButtonText.y = 435
+	group:insert(shrubsButtonText)
 
 
 
@@ -168,11 +179,11 @@ function scene:createScene( event )
 	categoryTreesButton.alpha = .9
 	group:insert(categoryTreesButton)
 
-	categoryFurnitureButton = display.newImageRect ( "images/navigation/categories/categoryFurniture.png", 130, 130)
-	categoryFurnitureButton.x = 170 + (categoryFurnitureButton.width / 2)
-	categoryFurnitureButton.y = 290 + (categoryFurnitureButton.height / 2)
-	categoryFurnitureButton.alpha = .9
-	group:insert(categoryFurnitureButton)
+	categoryShrubsButton = display.newImageRect ( "images/navigation/categories/categoryFurniture.png", 130, 130)
+	categoryShrubsButton.x = 170 + (categoryShrubsButton.width / 2)
+	categoryShrubsButton.y = 290 + (categoryShrubsButton.height / 2)
+	categoryShrubsButton.alpha = .9
+	group:insert(categoryShrubsButton)
 
 
 
@@ -200,6 +211,8 @@ function scene:enterScene( event )
 
 	categoryFlowersButton:addEventListener ("touch", goFlowers)
 	categoryHerbsButton:addEventListener ("touch", goHerbs)
+	categoryTreesButton:addEventListener ("touch", goTrees)
+	categoryShrubsButton:addEventListener ("touch", goShrubs)
 
 end
 
