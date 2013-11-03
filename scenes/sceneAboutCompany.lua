@@ -1,7 +1,18 @@
 ----------------------------------------------------------------------------------
 --
--- scenetemplate.lua
+-- sceneAboutCompany.lua
 --
+-- Iconography courtesy of https://www.iconfinder.com/search/?q=iconset%3Aflat-ui-icons-24-px, Creative Commons
+-- Text alignment tips from: http://docs.coronalabs.com/api/library/display/newText.html
+-- ... and ... http://docs.coronalabs.com/api/type/TextField/align.html
+--
+-- Tableview help from http://masteringcoronasdk.com
+-- ... and http://www.youtube.com/watch?v=ZMh1VNbZ7z8
+--
+-- http://www.coronalabs.com/blog/2011/10/13/multiple-lines-in-display-newtext/
+--
+
+-- Thanks to http://hex2rgba.devoth.com Converter
 ----------------------------------------------------------------------------------
 
 local storyboard = require( "storyboard" )
@@ -70,6 +81,46 @@ function scene:createScene( event )
 	navBarContact.y = 5 + (navBarContact.height / 2)
 	navBarContact.alpha = .9
 	group:insert(navBarContact)
+
+
+	headingText = display.newText( "WHO WE ARE", 0, 0, Helvetica, 20)
+	headingText:setTextColor(43, 96, 50)
+	headingText.align = "center"
+	headingText.x = 160
+	headingText.y = 80
+	group:insert(headingText)
+
+	bodyTextString = "At Gnome and Away Garden Centre, we believe that the plants we surround ourselves " ..
+						"with reflect our personalities, and help us keep in touch with the universe. " ..
+						"Because choosing the right trees, shrubs or flowers for your home is so important, " ..
+						"we'll make sure you get the best advice."
+
+	bodyTextString2 = "That's our promise!"
+						
+
+	bodyText = display.newText( bodyTextString, 10, 100, 240, 220, Helvetica, 14)
+	bodyText:setTextColor(68, 68, 68)
+	bodyText.align = "center"
+	bodyText.x = 160
+	bodyText.y = 230
+	group:insert(bodyText)
+
+	bodyText2 = display.newText( bodyTextString2, 10, 100, 240, 220, Helvetica, 14)
+	bodyText2:setTextColor(68, 68, 68)
+	bodyText2.align = "center"
+	bodyText2.x = 160
+	bodyText2.y = 420
+	group:insert(bodyText2)
+
+	handsShaking = display.newImageRect ( "images/brandMaterials/handsShaking.jpg", 200, 114)
+	handsShaking.x = 160
+	handsShaking.y = 400
+	group:insert(handsShaking)
+
+
+
+
+
 end
 
 

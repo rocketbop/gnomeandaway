@@ -2,10 +2,17 @@
 --
 -- sceneCategories.lua
 --
--- Iconography courtesy of https://www.iconfinder.com/search/?q=iconset%3Ajigsoar-icons, Creative Commons
+-- Iconography courtesy of https://www.iconfinder.com/search/?q=iconset%3Aflat-ui-icons-24-px, Creative Commons
 -- Text alignment tips from: http://docs.coronalabs.com/api/library/display/newText.html
 -- ... and ... http://docs.coronalabs.com/api/type/TextField/align.html
 --
+-- Tableview help from http://masteringcoronasdk.com
+-- ... and http://www.youtube.com/watch?v=ZMh1VNbZ7z8
+--
+-- http://www.coronalabs.com/blog/2011/10/13/multiple-lines-in-display-newtext/
+--
+
+-- Thanks to http://hex2rgba.devoth.com Converter
 ----------------------------------------------------------------------------------
 
 local storyboard = require( "storyboard" )
@@ -124,7 +131,7 @@ function scene:createScene( event )
 
 
 	categorySectionText = display.newText( "PRODUCT CATEGORIES", 0, 0, Helvetica, 20)
-	categorySectionText:setTextColor(68, 68, 68)
+	categorySectionText:setTextColor(43, 96, 50)
 	categorySectionText.align = "center"
 	categorySectionText.x = 160
 	categorySectionText.y = 80

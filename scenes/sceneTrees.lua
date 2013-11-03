@@ -3,7 +3,7 @@
 --
 -- sceneFlowers.lua
 --
--- Iconography courtesy of http://www.jigsoaricons.com, Creative Commons
+-- Iconography courtesy of hhttps://www.iconfinder.com/search/?q=iconset%3Aflat-ui-icons-24-px, Creative Commons
 -- Text alignment tips from: http://docs.coronalabs.com/api/library/display/newText.html
 -- ... and ... http://docs.coronalabs.com/api/type/TextField/align.html
 --
