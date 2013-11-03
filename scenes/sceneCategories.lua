@@ -2,7 +2,7 @@
 --
 -- sceneCategories.lua
 --
--- Iconography courtesy of http://www.jigsoaricons.com, Creative Commons
+-- Iconography courtesy of https://www.iconfinder.com/search/?q=iconset%3Ajigsoar-icons, Creative Commons
 -- Text alignment tips from: http://docs.coronalabs.com/api/library/display/newText.html
 -- ... and ... http://docs.coronalabs.com/api/type/TextField/align.html
 --
@@ -56,6 +56,12 @@ end
 function goFlowers (event)
 	if event.phase == "ended" then
 	storyboard.gotoScene( "scenes.sceneFlowers" )
+    end
+end
+
+function goHerbs (event)
+	if event.phase == "ended" then
+	storyboard.gotoScene( "scenes.sceneHerbs" )
     end
 end
 
@@ -169,6 +175,10 @@ function scene:createScene( event )
 	group:insert(categoryFurnitureButton)
 
 
+
+
+
+
 end
 
 
@@ -189,6 +199,7 @@ function scene:enterScene( event )
 	navBarContact:addEventListener ("touch", goContact)
 
 	categoryFlowersButton:addEventListener ("touch", goFlowers)
+	categoryHerbsButton:addEventListener ("touch", goHerbs)
 
 end
 
