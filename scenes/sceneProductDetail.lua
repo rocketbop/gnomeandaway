@@ -1,7 +1,7 @@
 ----------------------------------------------------------------------------------
 --
 -- scenetemplate.lua
---
+-- http://www.coronalabs.com/blog/2011/10/13/multiple-lines-in-display-newtext/
 ----------------------------------------------------------------------------------
 
 local storyboard = require( "storyboard" )
@@ -20,7 +20,35 @@ local scene = storyboard.newScene()
 -- BEGINNING OF YOUR IMPLEMENTATION
 ---------------------------------------------------------------------------------
 
-display.setStatusBar( display.HiddenStatusBar )
+-- navigation functions
+
+	function goHome (event)
+		if event.phase == "ended" then
+		storyboard.gotoScene( "scenes.sceneHome" )
+	    end
+	end
+
+	function goBrowse (event)
+		if event.phase == "ended" then
+		storyboard.gotoScene( "scenes.sceneCategories" )
+	    end
+	end
+
+	function goInfo (event)
+		if event.phase == "ended" then
+		storyboard.gotoScene( "scenes.sceneAboutCompany" )
+	    end
+	end
+
+	function goContact (event)
+		if event.phase == "ended" then
+		storyboard.gotoScene( "scenes.sceneContact" )
+	    end
+	end
+
+
+
+
 
 -- Called when the scene's view does not exist:
 function scene:createScene( event )
@@ -32,37 +60,7 @@ function scene:createScene( event )
 	--	Example use-case: Restore 'group' from previously saved state.
 	
 	-----------------------------------------------------------------------------
-	background = display.newImageRect ( "images/backgrounds/grassBackground.jpg", 320, 480)
-	background.x = display.contentWidth/2
-	background.y = display.contentHeight/2
 	
-	group:insert(background)
-
-	logo = display.newImageRect ( "images/brandMaterials/logoWhite180H.png",240, 180)
-	logo.x = display.contentWidth/2
-	logo.y = 40 + (logo.height / 2)
-	logo.alpha = .9
-	group:insert(logo)
-
-	navButtonFlowers = display.newImageRect ( "images/navigation/navButtonFlowers.png",240, 50)
-	navButtonFlowers.x = display.contentWidth/2
-	navButtonFlowers.y = 250 + (navButtonFlowers.height / 2)
-	navButtonFlowers.alpha = .9
-	group:insert(navButtonFlowers)
-
-	navButtonFlowers = display.newImageRect ( "images/navigation/navButtonFlowers.png",240, 50)
-	navButtonFlowers.x = display.contentWidth/2
-	navButtonFlowers.y = 320 + (navButtonFlowers.height / 2)
-	navButtonFlowers.alpha = .9
-	group:insert(navButtonFlowers)
-
-	navButtonFlowers = display.newImageRect ( "images/navigation/navButtonFlowers.png",240, 50)
-	navButtonFlowers.x = display.contentWidth/2
-	navButtonFlowers.y = 390 + (navButtonFlowers.height / 2)
-	navButtonFlowers.alpha = .9
-	group:insert(navButtonFlowers)
-
-
 end
 
 
@@ -72,8 +70,99 @@ function scene:enterScene( event )
 	
 	-----------------------------------------------------------------------------
 		
-	--	INSERT code here (e.g. start timers, load audio, start listeners, etc.)
-	
+
+local backgroundWhite = display.newRect(0, 0, 320, 480)
+	backgroundWhite:setFillColor(255, 255, 255)
+	group:insert(backgroundWhite)
+
+	-- navbar
+
+	navBarHome = display.newImageRect ( "images/navigation/navBar/navBarHome.png", 32, 32)
+	navBarHome.x = 40
+	navBarHome.y = 5 + (navBarHome.height / 2)
+	navBarHome.alpha = .9
+	group:insert(navBarHome)
+
+	navBarBrowseProducts = display.newImageRect ( "images/navigation/navBar/navBarBrowseProducts.png", 32, 32)
+	navBarBrowseProducts.x = 120
+	navBarBrowseProducts.y = 5 + (navBarBrowseProducts.height / 2)
+	navBarBrowseProducts.alpha = .9
+	group:insert(navBarBrowseProducts)
+
+	navBarInfo = display.newImageRect ( "images/navigation/navBar/navBarInfo.png", 32, 32)
+	navBarInfo.x = 200
+	navBarInfo.y = 5 + (navBarInfo.height / 2)
+	navBarInfo.alpha = .9
+	group:insert(navBarInfo)
+
+	navBarContact = display.newImageRect ( "images/navigation/navBar/navBarContact.png", 32, 32)
+	navBarContact.x = 280
+	navBarContact.y = 5 + (navBarContact.height / 2)
+	navBarContact.alpha = .9
+	group:insert(navBarContact)
+
+
+
+	-- Navigation event listeners
+	navBarHome:addEventListener ("touch", goHome)
+	navBarBrowseProducts:addEventListener ("touch", goBrowse)
+	navBarInfo:addEventListener ("touch", goInfo)
+	navBarContact:addEventListener ("touch", goContact)
+
+
+	params = event.params
+      	  print(params.var1)
+      	  print(params.var2)
+      	  print(params.var3)
+      	  print(params.var4)
+
+ --    message = display.newText( "You Tapped: " .. params.var1, 160, 50, nil, 20, "Helvetica" )
+	-- message.x = display.contentWidth/2
+	-- message.y = display.contentHeight/2 - 100
+	-- group:insert(message)
+
+	productDetailItemName = display.newText( params.var1, 10, 10, Helvetica, 24)
+	productDetailItemName:setTextColor(43, 96, 50)
+	productDetailItemName.align = "center"
+	productDetailItemName.x = 160
+	productDetailItemName.y = 80
+	group:insert(productDetailItemName)
+
+	productDetailItemSubInfo = display.newText( params.var2, 10, 100, 240, 100, Helvetica, 14)
+	productDetailItemSubInfo:setTextColor(68, 68, 68)
+	productDetailItemSubInfo.align = "center"
+	productDetailItemSubInfo.x = 160
+	productDetailItemSubInfo.y = 160
+	group:insert(productDetailItemSubInfo)
+
+
+	itemImage = display.newImage( params.var3 )
+	itemImage.x = 160
+	itemImage.y = 280
+	itemImage.height = 180
+	itemImage.width = 250
+	group:insert(itemImage)
+
+	backButton = display.newImage( "images/navigation/backButton.png", 32, 32)
+	backButton.x = 160
+	backButton.y = 420
+	backButton.height = 32
+	backButton.width = 32
+	group:insert(backButton)
+
+	function goBackToCategory (event)
+		if event.phase == "ended" then
+		storyboard.gotoScene( params.var4 )
+	    end
+	end
+
+ 	-- Navigation event listeners
+	navBarHome:addEventListener ("touch", goHome)
+	navBarBrowseProducts:addEventListener ("touch", goBrowse)
+	navBarInfo:addEventListener ("touch", goInfo)
+	navBarContact:addEventListener ("touch", goContact)
+	backButton:addEventListener( "touch", goBackToCategory)
+
 	-----------------------------------------------------------------------------
 	
 end
